@@ -96,17 +96,17 @@ try:
 
 
 
-cursor.execute("""insert into clientes
+    cursor.execute("""insert into clientes
                      values ( 1, 'patata', 150)""")
-cursor.execute("""insert into clientes
+    cursor.execute("""insert into clientes
                      values ( 2, 'melon', 150)""")
-cursor.execute("""insert into clientes
+    cursor.execute("""insert into clientes
                      values ( 3, 'nocilla', 150)""")
-cursor.execute("""insert into clientes
+    cursor.execute("""insert into clientes
                      values ( 4, 'lentejas', 150)""")
 
 
-bbdd.commit()
+    bbdd.commit()
 
 
 
