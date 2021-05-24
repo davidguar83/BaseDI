@@ -110,4 +110,4 @@ bbdd.commit()
 
 
 except dbapi.DatabaseError as e:
-print("Erro insertando os datos en clientes: " + str(e))
+    print("Erro insertando os datos en clientes: " + str(e))
