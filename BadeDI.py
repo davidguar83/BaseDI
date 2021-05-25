@@ -113,3 +113,42 @@ try:
 
 except dbapi.DatabaseError as e:
     print("Erro insertando os datos en clientes: " + str(e))
+
+
+
+    try:
+     cursor.execute("select * from clientes")
+        # fetchone a seguinte tupla
+        # fetchall devolta un obxecto iterable con todalas tuplas
+        # fetcmany numero de tuplas pasado por parametro
+     for fila in cursor.fetchall():
+            print("DNI: " + fila[0])
+            print("Nome: " + fila[1])
+            print("Apellidos: " + fila[2])
+            print("Telefono: " + str(fila[3]))
+            print("Deuda: " + str(fila[4]))
+
+
+    except dbapi.DatabaseError as e:
+        print("Erro facendo a consulta: " + str(e))
+    else:
+        print("Consulta executada")
+        Nome= input("Introduce o nome")
+    try:
+        consulta = "select * from clientes where Nome= ?"
+        print(consulta)
+        cursor.execute(consulta,(Nome,))
+        for rexistro in cursor.fetchall():
+            print(rexistro)
+    except dbapi.DatabaseError as e:
+        print("Erro facendo a consulta: " + str(e))
+    else:
+        print("Consulta executada")
+        bbdd.commit()
+
+else:
+    print ("Base de datos creada")
+
+finally:
+    cursor.close()
+    bbdd.close()
